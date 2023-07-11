@@ -1,6 +1,7 @@
+import discord
 from discord.ext import commands
 
-class ExampleCog(commands.Cog):
+class pingCog(commands.Cog):
     def __init__(self, bot: commands.Bot) -> None:
         self.bot = bot
 	
@@ -10,7 +11,8 @@ class ExampleCog(commands.Cog):
 	
     @commands.command()
     async def ping(self, ctx: commands.Context) -> None:
+        print("Ping")
         await ctx.send(f'Pong')
 
 async def setup(bot: commands.Bot) -> None:
-    await bot.add_cog(ExampleCog(bot))
+    await bot.add_cog(pingCog(bot))

@@ -1,7 +1,7 @@
 from discord.ext import commands
 import discord
 
-EXTENSIONS = ("extensions.example",)
+EXTENSIONS = ("extensions.ping", "extensions.voice")
 INTENTS = discord.Intents.default()
 INTENTS.message_content = True
 
@@ -15,4 +15,4 @@ async def setup_hook() -> None:
     for extension in EXTENSIONS:
         await bot.load_extension(extension)
 
-bot.run("")
+bot.run("token")
